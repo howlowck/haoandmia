@@ -11,6 +11,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="/css/main.css" />
 		<style>
+			@media only screen and (max-width: 640px) {
+				.person {
+					flex-direction: column;
+				}
+				.person .image {
+					align-self: center;
+					margin-bottom: 10px;
+				}
+				.person .information .name {
+					text-align: center;
+				}
+			}
 		  .person {
 			  display: flex;
 			  margin-bottom: 20px;
@@ -36,7 +48,7 @@
 					<header id="header">
 						<div class="logo">
 							<span class="icon {{ .Site.Params.logo }}"></span>
-						</div>
+						</div> 
 						<div class="content">
 							<div class="inner">
 								<h1>{{ .Site.Params.title | safeHTML }}</h1>
@@ -68,14 +80,14 @@
 								<div class="person">
 									<div class="image"><img src="/img/laura.jpg" alt=""></div>
 									<div class="information">
-										<h4>Laura Swanson</h4>
+										<h4 class="name">Laura Swanson</h4>
 										<p>Laura and Mia hung out every weekend for seven years when they are both in Chicago.</p>
 									</div>
 								</div>
 								<div class="person">
 									<div class="image"><img src="/img/allie.jpg" alt=""></div>
 									<div class="information">
-										<h4>Allie Sundet</h4>
+										<h4 class="name">Allie Sundet</h4>
 										<p>Allie and Mia have been roommates ever since Mia moved to Chicago.  They have learned to grow together during all these years.</p>
 									</div>
 								</div>
