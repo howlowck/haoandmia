@@ -1,0 +1,31 @@
+languageCode = "en-us"
+title = "Hao and Mia"
+baseurl = "https://haoandmia.com"
+theme = "dimension"
+
+[params]
+  title = "Hao and Mia"
+  description = '<!--[-->We are getting married!!! <!--]--><br />
+                <!--[-->July 8th - 6:30pm - 1314 W Randolph St. Chicago, IL 60607<!--]-->'
+  logo = "fa-heart-o"
+  copyright = "Untitled"
+
+[[params.social]]
+  medium = "twitter"
+  icon = "twitter"
+  link = "#"
+
+[[params.social]]
+  medium = "facebook"
+  icon = "facebook"
+  link = "#"
+
+[[params.social]]
+  medium = "instagram"
+  icon = "instagram"
+  link = "#"
+
+[[params.social]]
+  medium = "github"
+  icon = "github"
+  link = "#"
