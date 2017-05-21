@@ -9,6 +9,8 @@ theme = "dimension"
                 <!--[-->July 8th - 4pm - 1314 W Randolph St. Chicago, IL 60607<!--]-->'
   logo = "fa-heart-o"
   copyright = "Untitled"
+  apiEndpoint = "http://localhost:8000"
+  # apiEndpoint = "https://guests.haoandmia.com"
 
 [[params.social]]
   medium = "twitter"
@@ -83,3 +85,27 @@ theme = "dimension"
   title = "Bridesmaid | Light design and furniture creation master in California"
   story = "Mia and Sherine met at summer camp in the third grade through our friend Sheila. Mia and Sherine started going to school together in junior high and instantly clicked as close friends. Sherine is the friend Mia knows she could call at any hour for anything (and the feeling is mutual). They are like sisters in that way. They have shared their life experiences together - some of the richest moments and some of the saddest moments. Sherine and Mia have each other’s back and while they are different people, they often connect at the heart. Sherine has encouraged Mia to pursue my dreams both in word and by example - she pursued a master's program after finishing a rigorous undergraduate degree and worked in different major cities. Sherine wouldn’t let Mia give up on my dreams either. Sherine lights up a room with her laughter and love for people. Sherine has shown Mia what love looks like and to never give up no matter what happens in life!"
   photo = "sherine.jpg"
+
+[[params.groomparty]]
+  name = "Jian Tian"
+  title = "Best Man | Software Engineer at University of Chicago"
+  story = "Jian and Hao met at Vanderbilt.  They both served in the Intervarsity fellowship together, and would often talk about life and God. After college, Jian and Hao stayed in touch, and through one phone call, they convinced each other to move to Chicago together.  And their friendship has only deepened since then."
+  photo = "jian.jpg"
+
+[[params.groomparty]]
+name = "Sen (Mark) Ma"
+title = "Groomsmen | FPGA Wizard at Micron Technology"
+story = "Mark was a first-year PHD student from China when Hao was assigned to the same computer lab as him. Mark not only helped Hao with every computer engineering question he had, he also sparked Hao's curiosity to pursue more deeply in computer science.  Mark seems to have infinite patience when comes to teaching others, and his sense of curiosity is inspirational."
+photo = "mark.jpg"
+
+[[params.groomparty]]
+name = "David Goodwin"
+title = "Groomsmen | Speaker of Wisdom & Recent Graduate of McCormick Seminary"
+story = "Hao met David when he was carrying a bag of donated clothes to church. Shortly after, David invited me to his small group.  It just so happens to be Mia's small group as well.  David was Hao's confidant when he was thinking about pursuing Mia, and helped him process his thoughts.  Even after Mia and Hao started dating, David was there as a trusted friend to speak wisdom into their relationship."
+photo = "david.jpg"
+
+[[params.groomparty]]
+name = "Matthew Luo"
+title = "Groomsmen | Brother & Swimmer (as fast as a fish)"
+story = "Hao and Matthew are 15 years apart.  Hao still remembers when Matthew was born.  Now, Matthew is soon turning 14.  Matthew is quiet and stoic most days, but when it comes to Swimming or Minecraft, he can go nonstop.  Matthew is talented in writing, and would often come up with clever puzzles for our whole family to solve."
+photo = "matthew.jpg"

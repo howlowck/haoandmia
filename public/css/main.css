@@ -1237,8 +1237,8 @@
 
 		#header .content {
 			border-style: solid;
-			border-color: #ffffff;
-			border-top-width: 1px;
+			border-color: rgba(255, 255, 255, 0.3);
+			/*border-top-width: 1px;*/
 			border-bottom-width: 1px;
 			max-width: 100%;
 		}

@@ -54,6 +54,14 @@
 		  .registry img {
 			  width: 100%;
 		  }
+
+		  .hidden {
+			  display: none !important;
+		  }
+
+		  #phone {
+			  padding: 5px 10px;
+		  }
 		  
 		</style>
 		<!--[if lte IE 9]><link rel="stylesheet" href="/css/ie9.css" /><![endif]-->
@@ -92,7 +100,14 @@
 							<article id="story">
 								<h2 class="major">Our Story</h2>
 								<span class="image main"><img src="/img/story.jpg" alt="" /></span>
-								<p>Hao and Mia met at a volunteering event to help the homeless.  </p>
+								<p>In 2014, Hao and Mia met at a volunteer event.  When Hao first saw her, he immediately saw someone who was full of joy and love.  And she saw him as a nice, and "quiet nerd". Hao soon joined the same small group as Mia in church, and they quickly became friends.  Mia hurt her back in 2015, and she was commuting by bus to/from her graduate prerequisite classes.  When Hao had heard, he started driving her home after her class.
+								<br><br>
+								After a year of being good friends, Hao told Mia that he would like to pursue her.  When he told her, she started giggling uncontrollably.  She had no idea that Hao had liked her for so long. Soon after, they officially started dating.
+								<br><br>
+								In September 2015, Mia and Hao were walking in Millennium Park.  They saw there was a Chicago Gourmet event that was all-you-can-eat and unlimit drinks.  On a whim, they bought tickets to the event.  It turned out to be a beautiful, breezy fall night.  And the event was wonderful.  With great food, beautiful weather, everything felt right.  When the event was coming to a close, Mia was tearing up because she didn't want the night to end.  Hao knew at that moment that this is the event that he will propose to her.
+								<br><br>
+								Hao made arrangements with the event organizers in 2016, and proposed to Mia under the same beautiful nightsky at the Chicago Gourmet event.  
+								</p>
 							</article>
 
 							<article id="bride">
@@ -113,12 +128,12 @@
 								<h2 class="major">Wedding Information</h2>
 								<h3>Time</h3>
 								<p>Ceremony Starts 4:00 PM on July 8th</p>
-								<h3>Location</h3>
-								<p>Prarie Productions - 
+								<h3>Ceremoney and Receiption Location</h3>
+								<p>Prairie Productions - 
 									<a target="blank" href="https://goo.gl/maps/w2C8iNLdons">1314 W Randolph St, Chicago, IL 60607</a>
 								</p>
-								<h3>Hotels</h3>
-								<a class="hotel" target="blank" href=""><img src="img/londonhouse.jpg"></a>
+								<h3>Hotel Accommodation</h3>
+								<a class="hotel" target="blank" href="https://secure3.hilton.com/en_US/qq/reservation/book.htm?inputModule=HOTEL&ctyhocn=CHILHQQ&spec_plan=MHW&arrival=20170707&departure=20170709&cid=OM,WW,HILTONLINK,EN,DirectLink&fromId=HILTONLINKDIRECT"><img src="img/londonhouse.jpg"></a>
 								<br><br>
 								<h3>Wedding Registry</h3>
 								<a class="registry" target="blank" href="https://www.crateandbarrel.com/gift-registry/mia-stclair-and-hao-luo/r5695856"><img class="logo" src="img/crateandbarrel.jpg"></a>
@@ -126,9 +141,8 @@
 			                    <a class="registry" target="blank" href="https://www.amazon.com/wedding/mia-stclair-hao-luo-chicago-july-2017/registry/2Y6E5429TZIBY"><img class="logo" src="img/amazon.jpg"></a>
 								<br>
 								<h3>Wedding Bot</h3>
-								If you have any questions you can text to the Wedding Bot at (773) 270-2848.  Ask a question or just say hi, and see what the Bot can do.
+								If you have any questions, starting June 1st, you can text to the Wedding Bot at (773) 270-2848.  Ask a question or just say hi, and see what the Bot can do.
 								
-								<h3></h3>
 							</article>
 							<article id="groom">
                                 {{ range .Site.Params.groomparty}}
@@ -136,6 +150,8 @@
 									<div class="image"><img src="/img/{{.photo}}" alt=""></div>
 									<div class="information">
 										<h4 class="name">{{.name}}</h4>
+										<div class="title">{{.title}}</div>
+										<hr>
 										<p>{{.story}}</p>
 									</div>
 								</div>
@@ -144,35 +160,72 @@
 
 							<article id="rsvp">
 								<h2 class="major">RSVP</h2>
-								<form method="post" action="#">
-									<div class="field half first">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
-									</div>
-									<div class="field half">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="4"></textarea>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="special" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
-								<ul class="icons">
-									{{ range .Site.Params.social }}
-									<li><a href="{{ .link | safeURL }}" class="icon fa-{{ .icon }}"><span class="label">{{ .medium }}</span></a></li>
-									{{ end }}
-								</ul>
+								<div id="invite-code" class="form">
+									<form id="code-form">
+										<label for="code">Your Invite Code (from email)</label>
+										<input type="text" id="code" name="id" >
+										<br>
+										<p id="code-error" style="color: pink" class="hidden">Cannot find this code.  Please go back to your invitation email and try again.</p>
+										<button>Submit</button>
+									</form>
+								</div>
+								<div id="rsvp-container" class="form hidden">
+									<form id="rsvp-form" method="post">
+										<div class="rsvp-info">
+											<h3>Dear <span id="addressee-name"></span>,</h3>
+											<p>We are so excited to see at our celebration!  Please let us know if you can make it to the event!</p>
+										</div>
+										<div id="response-container">
+											<div class="field half first">
+												<input type="radio" name="rsvp-response" id="will-attend" checked value="will-attend"><label for="will-attend">Will Attend</label>
+											</div>
+											<div class="field half">
+												<input type="radio" name="rsvp-response"  id="cannot-attend" value="cannot-attend"><label for="cannot-attend">Cannot Attend</label>
+											</div>
+										</div>
+										<div class="divider" ></div>
+										<div id="attending-form">
+											<div id="guests-container">
+												<h4>Your Plus One(s)</h4>
+												<p>Please fill out the name of whom you will bring. You don't have to put yourself here. If you don't plan to bring anyone, you can simply leave it blank.</p>
+												<div id="guests">
+
+												</div>
+											</div>
+											<div class="questions">
+												<h4>Some Questions<h4>
+												<div class="field">
+													<label for="phone">What is your phone number?</label>
+													<input id="phone" type="tel" name="phone">
+												</div>
+												<div class="field">
+													<label for="songs">What are some dance songs you like?</label>
+													<textarea id="songs" name="songs"></textarea>
+												</div>
+											</div>
+										</div>
+										<div class="field">
+											<label for="message">Any Comments or Questions</label>
+											<textarea name="message" id="message" rows="4"></textarea>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="RSVP" class="special" /></li>
+										</ul>
+									</form>
+								</div>
+								<div id="confirmation-container" class="hidden">
+									<h3>Thank you for RSVPing!</h3>
+									<p id="confirmation-message">
+
+									</p>
+									<a href="https://haoandmia.com">Go back to the Home Page</a>
+								</div>
 							</article>
 					</div>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">Created by Hao. Powered by <a href="https://www.gohugo.io/">Hugo.</a></p>
+						<p class="copyright">Created by Hao.</a></p>
 					</footer>
 
 			</div>
@@ -185,6 +238,157 @@
 			<script src="/js/skel.min.js"></script>
 			<script src="/js/util.js"></script>
 			<script src="/js/main.js"></script>
+			<script id="guest-input-template" type="text/template">
+			  <div class="guest-inputs">
+				  <div class="field half first">
+					  <input type="text" name="first-name" placeholder="First Name">
+				  </div>
+				  <div class="field half">
+					  <input type="text" name="last-name" placeholder="Last Name">
+				  </div>
+			  </div>
+			</script>
+			<script>
+				function getQueryString(name) {
+					name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+					var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+					var results = regex.exec(location.hash);
+					return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+				};
 
+				function displayInvitation(addressee, invitation) {
+					var totalGuests = invitation.total_guests;
+					var confirmed = invitation.confirmed;
+					var attending = invitation.will_come;
+					var songs = invitation.favorite_song;
+					var message = invitation.notes;
+
+					var $codeEl = $('#invite-code');
+					var $rsvpEl = $('#rsvp-container');
+					var $songs = $('#songs');
+					var $message = $('#message');
+					var $phone = $('#phone');
+
+					$songs.val(songs);
+					$message.val(message);
+					$phone.val(addressee.phone);
+
+					var plusOnes = invitation.guests.filter(function (guest) {
+						return ! guest.addressee_code
+					});
+
+					console.log('attending', attending);
+
+					if (confirmed && !attending) {
+						$("#will-attend").prop("checked", false);
+						$("#cannot-attend").prop("checked", true);
+					}
+					if (totalGuests < 2) {
+						$('#guests-container').addClass('hidden');
+					} else {
+						addGuestEls(totalGuests - 1, plusOnes);
+					}
+					
+					$('#addressee-name').text(addressee.honorific + ' ' + addressee.first_name + ' ' + addressee.last_name);
+					
+					$codeEl.addClass('hidden');
+					$rsvpEl.removeClass('hidden');
+				}
+
+				function addGuestEls(amount, plusOnes) {
+					var el = $('#guest-input-template').html();
+					for (var i = 0; i < amount; i++) {
+						$('#guests').append(el);
+					}
+
+					if (plusOnes.length > 0) {
+						$('.guest-inputs').each(function (index) {
+							if (plusOnes[index]) {
+								$(this).find('input[name="first-name"]').val(plusOnes[index].first_name);
+								$(this).find('input[name="last-name"]').val(plusOnes[index].last_name);
+							}
+						})
+					}
+				}
+
+				function showInvalidCodeError() {
+					$('#code-error').removeClass('hidden');
+				}
+
+				function showConfirmation(attending) {
+					if (attending === 'cannot-attend') {
+						$('#confirmation-message').text('Oh no! We are really sorry that you cannot celebrate with us!  Feel free to contact us any time.');
+					} else {
+						$('#confirmation-message').text('Yay!  We are so happy that you can join us in the celebration!  See you July 8th in Chicago!');
+					}
+
+					$('#confirmation-container').removeClass('hidden');
+				}
+
+				$('input[name="rsvp-response"]').on('change', function (evt) {
+					console.log($('input[name=rsvp-response]:checked').val());
+				})
+				var inviteCode = getQueryString('code');
+				$('#code').val(inviteCode);
+
+				$('#code-form').submit(function (evt) {
+					evt.preventDefault();
+					$.ajax({
+						url: '{{.Site.Params.apiEndpoint}}/api/invitations/guest',
+						method: 'post',
+						data: {'code': $('#code').val()}
+					}).done(function (data) {
+						console.log(data)
+						if (data.result) {
+							displayInvitation(data.result.addressee, data.result.invitation);
+						} else {
+							//TODO show error
+							showInvalidCodeError();
+						}
+					}).fail(function (error) {
+						console.log(error);
+					})
+				});
+
+				$('#rsvp-form').submit(function (evt) {
+					evt.preventDefault();
+					var payload = {};
+					payload.attending = $('input[name=rsvp-response]:checked').val();
+					payload.phone = $('#phone').val();
+					payload.code = $('#code').val();
+					payload.songs = $('#songs').val();
+					payload.notes = $('#message').val();
+					
+					var guests = [];
+					$('.guest-inputs').each(function () {
+						var firstName = $(this).find('input[name="first-name"]').val();
+						var lastName = $(this).find('input[name="last-name"]').val();
+
+						if (firstName.trim() === '' && lastName.trim() === '') {
+							return;
+						} 
+
+						guests.push({
+							first_name: firstName,
+							last_name: lastName
+						});
+					});
+
+					payload.guests = guests;
+
+					console.log(JSON.stringify(payload));
+					$.ajax({
+						url: '{{.Site.Params.apiEndpoint}}/api/invitations/rsvp',
+						method: 'post',
+						data: payload
+					}).done(function (data) {
+						$('#rsvp-container').addClass('hidden');
+						showConfirmation(payload.attending)
+					}).fail(function (error) {
+						console.log(error);
+					});
+					
+				})
+			</script>
 	</body>
 </html>
