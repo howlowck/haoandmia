@@ -9,8 +9,8 @@ theme = "dimension"
                 <!--[-->July 8th - 4pm - 1314 W Randolph St. Chicago, IL 60607<!--]-->'
   logo = "fa-heart-o"
   copyright = "Untitled"
-  apiEndpoint = "http://localhost:8000"
-  # apiEndpoint = "https://guests.haoandmia.com"
+  # apiEndpoint = "http://localhost:8000"
+  apiEndpoint = "https://guests.haoandmia.com"
 
 [[params.social]]
   medium = "twitter"
