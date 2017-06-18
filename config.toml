@@ -105,6 +105,12 @@ story = "Hao met David when he was carrying a bag of donated clothes to church. 
 photo = "david.jpg"
 
 [[params.groomparty]]
+name = "Fred Lissau"
+title = "Groomsmen | Hardware + Software Extraordenare at Gogo"
+story = "Hao and Fred met in high school, and quick became close friends.  Fred taught Hao everything about Pop Culture.  When Hao needed a distraction, Fred handed him a DVD of Fight Club which sparked his interest in movies.  Fred is briliantly analytical and always has some wise words when Hao needs some advice.  Hao was elated when Fred contacted him about moving to Chicago."
+photo = "fred.jpg"
+
+[[params.groomparty]]
 name = "Matthew Luo"
 title = "Groomsmen | Brother & Swimmer (as fast as a fish)"
 story = "Hao and Matthew are 15 years apart.  Hao still remembers when Matthew was born.  Now, Matthew is soon turning 14.  Matthew is quiet and stoic most days, but when it comes to Swimming or Minecraft, he can go nonstop.  Matthew is talented in writing, and would often come up with clever puzzles for our whole family to solve."
